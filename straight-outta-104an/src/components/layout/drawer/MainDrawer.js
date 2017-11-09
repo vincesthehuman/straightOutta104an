@@ -41,12 +41,7 @@ class MainDrawer extends React.Component {
           open={this.state.left}
           onRequestClose={this.toggleDrawer('left', false)}
         >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('left', false)}
-            onKeyDown={this.toggleDrawer('left', false)}
-          >
+          <div tabIndex={0} role="button">
             {sideList}
           </div>
         </Drawer>
