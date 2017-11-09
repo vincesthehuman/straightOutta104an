@@ -14,14 +14,6 @@ const styles = {
   media: {
     height: 200,
   },
-  button: {
-    color: 'black',
-    marginRight: 20,
-    background: 'white',
-    borderWidth: 1,
-    borderColor: 'black',
-    borderStyle: 'solid'
-  },
   category: {
     textAlign: 'right',
     padding: 10,
@@ -40,8 +32,8 @@ function NewsCard(props) {
           </Typography>
         <CardMedia
           className={classes.media}
-          image="/static/images/logo.png"
           title="Katt"
+          image=""
         />
         <CardContent>
         <Typography type="headline" component="h2">
@@ -52,10 +44,10 @@ function NewsCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button className={classes.button}>
+          <Button color='primary'>
             Dela
           </Button>
-          <Button className={classes.button}>
+          <Button raised>
             Läs mer
           </Button>
         </CardActions>
