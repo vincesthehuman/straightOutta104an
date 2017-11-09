@@ -23,30 +23,37 @@ const styles = {
   }
 }
 
-function NewsCard(props) {
-  const { classes } = props
-  return (
-    <div style={{display: 'flex'}}>
-      <Card className={classes.card}>
-        <Typography className={classes.category} type="headline" component="h2">
-          Djur
-        </Typography>
-        <CardMedia className={classes.media} title="Katt" image="" />
-        <CardContent>
-          <Typography type="headline" component="h2">
-            Katt
+class NewsCard extends React.Component {
+  render() {
+    const { classes } = this.props
+    console.log(this.props.result.title)
+    return (
+      <div style={{ display: 'flex' }}>
+        <Card className={classes.card}>
+          <Typography
+            className={classes.category}
+            type="headline"
+            component="h2"
+          >
+            Djur
           </Typography>
-          <Typography component="p">
-            Här kommer en nyhet om en katt! Den här katten är fin.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button color="primary">Dela</Button>
-          <Button raised>Läs mer</Button>
-        </CardActions>
-      </Card>
-    </div>
-  )
+          <CardMedia className={classes.media} title="Katt" image="" />
+          <CardContent>
+            <Typography type="headline" component="h2">
+              {this.props.result.title}
+            </Typography>
+            <Typography component="p">
+              Här kommer en nyhet om en katt! Den här katten är fin.
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button color="primary">Dela</Button>
+            <Button raised>Läs mer</Button>
+          </CardActions>
+        </Card>
+      </div>
+    )
+  }
 }
 
 NewsCard.propTypes = {
