@@ -9,7 +9,8 @@ const styles = {
   card: {
     maxWidth: 345,
     boxShadow: '5px 5px 5px #888888',
-    textAlign: 'left'
+    textAlign: 'left',
+    marginBottom: '25px'
   },
   media: {
     height: 200
@@ -25,7 +26,7 @@ const styles = {
 function NewsCard(props) {
   const { classes } = props
   return (
-    <div>
+    <div style={{display: 'flex'}}>
       <Card className={classes.card}>
         <Typography className={classes.category} type="headline" component="h2">
           Djur
