@@ -8,24 +8,43 @@ import Typography from 'material-ui/Typography';
 const styles = {
   card: {
     maxWidth: 345,
+    boxShadow: '5px 5px 5px #888888',
+    textAlign: 'left'
   },
   media: {
     height: 200,
   },
+  button: {
+    color: 'black',
+    marginRight: 20,
+    background: 'white',
+    borderWidth: 1,
+    borderColor: 'black',
+    borderStyle: 'solid'
+  },
+  category: {
+    textAlign: 'right',
+    padding: 10,
+    fontSize: 'large',
+    opacity: 0.75
+  }
 };
 
-function SimpleMediaCard(props) {
+function NewsCard(props) {
   const { classes } = props;
   return (
     <div>
       <Card className={classes.card}>
+      <Typography className={classes.category} type="headline" component="h2">
+            Djur
+          </Typography>
         <CardMedia
           className={classes.media}
-          image="https://www.google.se/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiZ7vrJtbHXAhWR6KQKHfAGDGkQjhwIBQ&url=https%3A%2F%2Fwww.agria.se%2Fkatt%2Fartiklar%2Fsjukdomar-och-skador%2Fkattens-urinvagssjukdomar%2F&psig=AOvVaw3uMFd0FzC59iTsvNdUxxtd&ust=1510314356027066"
+          image="/static/images/logo.png"
           title="Katt"
         />
         <CardContent>
-          <Typography type="headline" component="h2">
+        <Typography type="headline" component="h2">
             Katt
           </Typography>
           <Typography component="p">
@@ -33,10 +52,10 @@ function SimpleMediaCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button dense color="primary">
+          <Button className={classes.button}>
             Dela
           </Button>
-          <Button dense color="primary">
+          <Button className={classes.button}>
             Läs mer
           </Button>
         </CardActions>
@@ -45,8 +64,8 @@ function SimpleMediaCard(props) {
   );
 }
 
-SimpleMediaCard.propTypes = {
+NewsCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleMediaCard);
+export default withStyles(styles)(NewsCard);
