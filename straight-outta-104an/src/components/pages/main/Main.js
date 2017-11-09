@@ -10,7 +10,7 @@ class Main extends Component {
         <Header />
         <div
           style={{
-            backgroundColor: 'gray',
+
             paddingTop: '10px'
           }}
         >
@@ -21,7 +21,6 @@ class Main extends Component {
               flexWrap: 'wrap'
             }}
           >
-            <NewsCard />
             <NewsCard />
             <NewsCard />
             <NewsCard />
