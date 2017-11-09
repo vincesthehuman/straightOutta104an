@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import Header from '../../layout/header/Header'
 import NewsCard from '../../layout/newscard/NewsCard'
-import Paper from 'material-ui/Paper'
+import Button from 'material-ui/Button'
+import {Post} from '../../../lib/get'
 
 class Main extends Component {
+  handleClick() {
+    Post('/sendNews').then((res) => console.log(res))
+  }
   render() {
     const getResults = {
       title: 'Team secret förlorade mot SG-e',
@@ -40,6 +44,9 @@ class Main extends Component {
                 date: '2017-11-09'
               }}
             />
+            <Button raised pirmary onClick={() => this.handleClick()}>
+              Click om me bitch
+            </Button>
           </div>
         </div>
       </div>
