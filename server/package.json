@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.1",
+    "node-fetch": "^1.7.3",
+    "spotify-web-api-node": "^2.5.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "great-toast-server",
+  "version": "1.0.0",
+  "description": "A server serving data from Spotify API",
+  "main": "server.js",
+  "author": "wiRoboto",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
