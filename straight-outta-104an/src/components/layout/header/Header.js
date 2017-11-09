@@ -8,7 +8,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
+//import MenuIcon from 'material-ui-icons/Menu';
 
 const styles = theme => ({
   root: {
@@ -31,7 +31,7 @@ function ButtonAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-            <MenuIcon />
+            
           </IconButton>
           <Typography type="title" color="inherit" className={classes.flex}>
             Straight outta 104an!
