@@ -78,7 +78,10 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Underkategori" />
+              <ListItemText inset primary="Erbjudanden" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Restauranger" />
             </ListItem>
           </Collapse>
 
@@ -99,7 +102,13 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Underkategori" />
+              <ListItemText inset primary="Film" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Musik" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Teater" />
             </ListItem>
           </Collapse>
 
@@ -120,7 +129,13 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Underkategori" />
+              <ListItemText inset primary="Barn" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Dam" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Herr" />
             </ListItem>
           </Collapse>
 
@@ -141,7 +156,13 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Underkategori" />
+              <ListItemText inset primary="Lokala" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Inrikes" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Utrikes" />
             </ListItem>
           </Collapse>
 
@@ -162,7 +183,22 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Underkategori" />
+              <ListItemText inset primary="E-sport" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Fotboll" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Handboll" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Hockey" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Häst" />
+            </ListItem>
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Innebandy" />
             </ListItem>
           </Collapse>
         </List>
