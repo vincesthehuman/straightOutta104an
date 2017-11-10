@@ -1,13 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+import List, {
+  ListItem,
+  ListItemSecondaryAction,
+  ListItemIcon,
+  ListItemText
+} from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import InboxIcon from 'material-ui-icons/Inbox'
+import SvgIcon from 'material-ui/SvgIcon'
 import DraftsIcon from 'material-ui-icons/Drafts'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import StarBorder from 'material-ui-icons/StarBorder'
+import {FoodIcon} from '../../../assets/icons/FoodIcon.js'
 
 const styles = theme => ({
   root: {
@@ -17,13 +22,10 @@ const styles = theme => ({
   }
 })
 
+
+
 class DrawerList extends React.Component {
   state = { open: false }
-
-  test(message) {
-    console.log(message)
-    //this.setState({ open: !this.state.open })
-  }
 
   handleClick() {
     this.setState({ open: !this.state.open })
@@ -34,12 +36,16 @@ class DrawerList extends React.Component {
     return (
       <div className={classes.root}>
         <List>
-          <ListItem button onClick={() => this.handleClick()}>
+          <ListItem button>
             <ListItemIcon>
-              <InboxIcon />
+              <FoodIcon  />
             </ListItemIcon>
             <ListItemText primary="Inbox" />
-            {this.state.open ? <ExpandLess /> : <ExpandMore />}
+            {this.state.open ? (
+              <ExpandLess onClick={() => this.handleClick()} />
+            ) : (
+              <ExpandMore onClick={() => this.handleClick()} />
+            )}
           </ListItem>
           <Collapse
             in={this.state.open}
@@ -47,13 +53,10 @@ class DrawerList extends React.Component {
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemIcon>
-                <StarBorder />
-              </ListItemIcon>
               <ListItemText inset primary="Starred" />
             </ListItem>
           </Collapse>
-          <ListItem button onClick={() => this.handleClick()}>
+          <ListItem>
             <ListItemIcon>
               <DraftsIcon />
             </ListItemIcon>
