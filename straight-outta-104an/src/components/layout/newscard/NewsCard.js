@@ -4,14 +4,12 @@ import { withStyles } from 'material-ui/styles'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
-import ExpandLess from 'material-ui-icons/ExpandLess'
-import ExpandMore from 'material-ui-icons/ExpandMore'
 import Collapse from 'material-ui/transitions/Collapse'
 
 const styles = {
   card: {
     maxWidth: 345,
-    boxShadow: '5px 5px 5px #888888',
+    boxShadow: '5px 5px 5px #6d6d6d ',
     textAlign: 'left',
     marginBottom: '25px'
   },
@@ -19,32 +17,45 @@ const styles = {
     height: 200,
     marginTop: 40
   },
+  title: {
+    fontSize: 20,
+    color: '#5e5e5e ',
+    paddingBottom: 5,
+    fontWeight: 600
+  },
   category: {
     float: 'right',
     padding: 10,
-    fontSize: 'large',
-    opacity: 0.75,
-    display: 'inline-block'
+    paddingRight: 15,
+    fontSize: 15,
+    display: 'inline-block',
+    color: '#777777 '
   },
   date: {
     float: 'left',
     padding: 10,
-    fontSize: 'small',
-    opacity: 0.75,
-    display: 'inline-block'
+    paddingLeft: 15,
+    fontSize: 15,
+    display: 'inline-block',
+    color: '#777777 '
+  },
+  content: {
+    color: '#777777 '
   },
   button: {
-   float: 'right'
+    display: 'flex',
+    float: 'right',
+    paddingRight: 7,
+    paddingBottom: 7
   }
 }
 
 class NewsCard extends React.Component {
   state = { open: false }
   
-  handleClick() {
+ handleClick() {
     this.setState({ open: !this.state.open })
   }
-
   render() {
     const { classes } = this.props
     return (
@@ -64,27 +75,30 @@ class NewsCard extends React.Component {
           >
             {this.props.result.subCategory}
           </Typography>
-          <CardMedia className={classes.media} image="https://cdn2.cdnme.se/cdn/8-2/422946/images/2008/24649_450_1206533212_1782186.jpg" />
+          <CardMedia className={classes.media} image={this.props.result.imageUrl} />
           <CardContent>
             <Typography type="headline" component="h2">
               {this.props.result.title}
             </Typography>
             <Typography component="p">
              {this.props.result.content.slice(0, 80) + "..."}
-            </Typography> 
+            </Typography>
             <Collapse
               in={this.state.open}
               transitionDuration="auto"
               unmountOnExit
-            > 
+            >
             <Typography component="p">
               {this.props.result.content}
             </Typography>
             </Collapse>
           </CardContent>
-          <CardActions className={classes.button}>
-            <Button raised onClick={() => this.handleClick()}>Läs mer</Button>
+          <div className={classes.button}>
+          <CardActions>
+            <Button color="primary">DELA</Button>
+            <Button raised color="primary" onClick={() => this.handleClick()}>{this.state.open ? "DÖLJ" : "LÄS MER"}</Button>
           </CardActions>
+          </div>
         </Card>
       </div>
     )
