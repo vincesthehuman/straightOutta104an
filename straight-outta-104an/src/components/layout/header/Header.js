@@ -14,6 +14,7 @@ const styles = theme => ({
     marginTop: 0,
     width: '100%'
   },
+  drawer: {},
   flex: {
     flex: 1
   },
@@ -63,7 +64,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography type="title" color="inherit" className={classes.flex}>
-              Straight outta 104an!
+              News sniffer - Sniffing out the news you want
             </Typography>
           </Toolbar>
         </AppBar>
