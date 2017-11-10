@@ -12,7 +12,8 @@ import SvgIcon from 'material-ui/SvgIcon'
 import DraftsIcon from 'material-ui-icons/Drafts'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import {FoodIcon} from '../../../assets/icons/FoodIcon.js'
+import {FoodIcon} from '../../../assets/icons/FoodIcon'
+import {CultureIcon} from '../../../assets/icons/CultureIcon'
 
 const styles = theme => ({
   root: {
