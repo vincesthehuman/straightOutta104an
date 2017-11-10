@@ -4,10 +4,6 @@ import NewsCard from '../../layout/newscard/NewsCard'
 import Paper from 'material-ui/Paper'
 
 class Main extends Component {
-  createCard(cardContent){
-    return <div><NewsCard result={cardContent} /></div>
-  }
-
   render() {
     let news = [{
       title: 'Team secret förlorade mot SG-e',
@@ -42,11 +38,9 @@ class Main extends Component {
               justifyContent: 'space-evenly',
               flexWrap: 'wrap'
             }}
-          >
-          <NewsCard result={news[0]} />
-          
-            {news.forEach(element => {
-             this.createCard(element)
+          >        
+            {news.map(element => {
+             return <div><NewsCard result={element} /></div>
             })} 
             
           </div>
