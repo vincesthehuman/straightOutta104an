@@ -27,10 +27,33 @@ const styles = theme => ({
 })
 
 class DrawerList extends React.Component {
-  state = { open: false }
+  state = {
+    open: false,
+    food: false,
+    culture: false,
+    fashion: false,
+    news: false,
+    sports: false
+  }
 
-  handleClick() {
-    this.setState({ open: !this.state.open })
+  handleClickFood() {
+    this.setState({ food: !this.state.food })
+  }
+
+  handleClickCulture() {
+    this.setState({ culture: !this.state.culture })
+  }
+
+  handleClickFashion() {
+    this.setState({ fashion: !this.state.fashion })
+  }
+
+  handleClickNews() {
+    this.setState({ news: !this.state.news })
+  }
+
+  handleClickSports() {
+    this.setState({ sports: !this.state.sports })
   }
 
   render() {
@@ -43,45 +66,105 @@ class DrawerList extends React.Component {
               <FoodIcon />
             </ListItemIcon>
             <ListItemText primary="Mat" />
-            {this.state.open ? (
-              <ExpandLess onClick={() => this.handleClick()} />
+            {this.state.food ? (
+              <ExpandLess onClick={() => this.handleClickFood()} />
             ) : (
-              <ExpandMore onClick={() => this.handleClick()} />
+              <ExpandMore onClick={() => this.handleClickFood()} />
             )}
           </ListItem>
           <Collapse
-            in={this.state.open}
+            in={this.state.food}
             transitionDuration="auto"
             unmountOnExit
           >
             <ListItem button className={classes.nested}>
-              <ListItemText inset primary="Starred" />
+              <ListItemText inset primary="Underkategori" />
             </ListItem>
           </Collapse>
-          <ListItem>
+
+          <ListItem button>
             <ListItemIcon>
               <CultureIcon />
             </ListItemIcon>
             <ListItemText primary="Kultur" />
+            {this.state.culture ? (
+              <ExpandLess onClick={() => this.handleClickCulture()} />
+            ) : (
+              <ExpandMore onClick={() => this.handleClickCulture()} />
+            )}
           </ListItem>
-          <ListItem>
+          <Collapse
+            in={this.state.culture}
+            transitionDuration="auto"
+            unmountOnExit
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Underkategori" />
+            </ListItem>
+          </Collapse>
+
+          <ListItem button>
             <ListItemIcon>
               <FashionIcon />
             </ListItemIcon>
             <ListItemText primary="Mode" />
+            {this.state.fashion ? (
+              <ExpandLess onClick={() => this.handleClickFashion()} />
+            ) : (
+              <ExpandMore onClick={() => this.handleClickFashion()} />
+            )}
           </ListItem>
-          <ListItem>
+          <Collapse
+            in={this.state.fashion}
+            transitionDuration="auto"
+            unmountOnExit
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Underkategori" />
+            </ListItem>
+          </Collapse>
+
+          <ListItem button>
             <ListItemIcon>
               <NewsIcon />
             </ListItemIcon>
             <ListItemText primary="Nyheter" />
+            {this.state.news ? (
+              <ExpandLess onClick={() => this.handleClickNews()} />
+            ) : (
+              <ExpandMore onClick={() => this.handleClickNews()} />
+            )}
           </ListItem>
-          <ListItem>
+          <Collapse
+            in={this.state.news}
+            transitionDuration="auto"
+            unmountOnExit
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Underkategori" />
+            </ListItem>
+          </Collapse>
+
+          <ListItem button>
             <ListItemIcon>
               <SportIcon />
             </ListItemIcon>
             <ListItemText primary="Sport" />
+            {this.state.sports ? (
+              <ExpandLess onClick={() => this.handleClickSports()} />
+            ) : (
+              <ExpandMore onClick={() => this.handleClickSports()} />
+            )}
           </ListItem>
+          <Collapse
+            in={this.state.sports}
+            transitionDuration="auto"
+            unmountOnExit
+          >
+            <ListItem button className={classes.nested}>
+              <ListItemText inset primary="Underkategori" />
+            </ListItem>
+          </Collapse>
         </List>
       </div>
     )
