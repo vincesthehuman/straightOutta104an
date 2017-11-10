@@ -4,6 +4,9 @@ import { withStyles } from 'material-ui/styles'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
+import ExpandLess from 'material-ui-icons/ExpandLess'
+import ExpandMore from 'material-ui-icons/ExpandMore'
+import Collapse from 'material-ui/transitions/Collapse'
 
 const styles = {
   card: {
@@ -26,7 +29,7 @@ const styles = {
   date: {
     float: 'left',
     padding: 10,
-    fontSize: 'large',
+    fontSize: 'small',
     opacity: 0.75,
     display: 'inline-block'
   },
@@ -36,6 +39,12 @@ const styles = {
 }
 
 class NewsCard extends React.Component {
+  state = { open: false }
+  
+  handleClick() {
+    this.setState({ open: !this.state.open })
+  }
+
   render() {
     const { classes } = this.props
     return (
@@ -61,11 +70,20 @@ class NewsCard extends React.Component {
               {this.props.result.title}
             </Typography>
             <Typography component="p">
-              {this.props.result.content.slice(0, 80)}...
+             {this.props.result.content.slice(0, 80) + "..."}
+            </Typography> 
+            <Collapse
+              in={this.state.open}
+              transitionDuration="auto"
+              unmountOnExit
+            > 
+            <Typography component="p">
+              {this.props.result.content}
             </Typography>
+            </Collapse>
           </CardContent>
           <CardActions className={classes.button}>
-            <Button raised>Läs mer</Button>
+            <Button raised onClick={() => this.handleClick()}>Läs mer</Button>
           </CardActions>
         </Card>
       </div>
