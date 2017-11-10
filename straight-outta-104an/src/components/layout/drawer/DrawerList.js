@@ -12,8 +12,11 @@ import SvgIcon from 'material-ui/SvgIcon'
 import DraftsIcon from 'material-ui-icons/Drafts'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import {FoodIcon} from '../../../assets/icons/FoodIcon'
-import {CultureIcon} from '../../../assets/icons/CultureIcon'
+import { FoodIcon } from '../../../assets/icons/FoodIcon'
+import { CultureIcon } from '../../../assets/icons/CultureIcon'
+import { FashionIcon } from '../../../assets/icons/FashionIcon'
+import { NewsIcon } from '../../../assets/icons/NewsIcon'
+import { SportIcon } from '../../../assets/icons/SportIcon'
 
 const styles = theme => ({
   root: {
@@ -22,8 +25,6 @@ const styles = theme => ({
     background: theme.palette.background.paper
   }
 })
-
-
 
 class DrawerList extends React.Component {
   state = { open: false }
@@ -39,9 +40,9 @@ class DrawerList extends React.Component {
         <List>
           <ListItem button>
             <ListItemIcon>
-              <FoodIcon  />
+              <FoodIcon />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="Mat" />
             {this.state.open ? (
               <ExpandLess onClick={() => this.handleClick()} />
             ) : (
@@ -59,9 +60,27 @@ class DrawerList extends React.Component {
           </Collapse>
           <ListItem>
             <ListItemIcon>
-              <DraftsIcon />
+              <CultureIcon />
             </ListItemIcon>
-            <ListItemText primary="Drafts" />
+            <ListItemText primary="Kultur" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <FashionIcon />
+            </ListItemIcon>
+            <ListItemText primary="Mode" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <NewsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Nyheter" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <SportIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sport" />
           </ListItem>
         </List>
       </div>
